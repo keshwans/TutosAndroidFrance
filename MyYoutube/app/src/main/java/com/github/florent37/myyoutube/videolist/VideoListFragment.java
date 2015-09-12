@@ -1,6 +1,7 @@
 package com.github.florent37.myyoutube.videolist;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.florent37.myyoutube.R;
+import com.github.florent37.myyoutube.model.ItemId;
 import com.github.florent37.myyoutube.model.Video;
 import com.github.florent37.myyoutube.task.SearchVideoTask;
 import com.github.florent37.myyoutube.videodetail.DetailActivity;
@@ -85,8 +87,14 @@ public class VideoListFragment extends Fragment implements SearchVideoTask.Searc
                 Pair.create(view.findViewById(R.id.title),getResources().getString(R.string.transitionTitle))
         ).toBundle();
 
-        Intent intent = new Intent(getActivity(), DetailActivity.class);
-        intent.putExtra(DetailActivity.VIDEO, video);
+//        Intent intent = new Intent(getActivity(), DetailActivity.class);
+//        intent.putExtra(DetailActivity.VIDEO, video);
+
+        ItemId itemId = video.getId();
+        if (itemId == null) return;
+
+        String videoId = itemId.getVideoId();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + videoId));
 
         ActivityCompat.startActivity(getActivity(),intent,bundle);
     }
