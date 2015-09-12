@@ -1,5 +1,7 @@
 package com.github.florent37.myyoutube.task;
 
+import android.util.Log;
+
 import com.github.florent37.myyoutube.model.Video;
 import com.github.florent37.myyoutube.model.YoutubeResponse;
 import com.github.florent37.myyoutube.webservice.YoutubeApi;
@@ -42,6 +44,6 @@ public class SearchVideoTask implements Callback<YoutubeResponse> {
 
     @Override
     public void failure(RetrofitError error) {
-
+        Log.e("SearchVideoTask", error.getMessage());
     }
 }

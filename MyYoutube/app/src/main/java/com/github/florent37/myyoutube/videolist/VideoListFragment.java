@@ -10,6 +10,7 @@ import android.support.v4.util.Pair;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +58,7 @@ public class VideoListFragment extends Fragment implements SearchVideoTask.Searc
         recyclerView.setAdapter(videoAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        search("Google IO");
+        search("mozi");
     }
 
     private void search(String query){
@@ -99,7 +100,7 @@ public class VideoListFragment extends Fragment implements SearchVideoTask.Searc
 
     @Override
     public void onSearchFailure() {
-
+        Log.e("search", "failed");
     }
 
     //endregion

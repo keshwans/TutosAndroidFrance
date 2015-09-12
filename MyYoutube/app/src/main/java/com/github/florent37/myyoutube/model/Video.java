@@ -31,6 +31,7 @@ public class Video implements Parcelable {
     }
 
     protected Video(Parcel in) {
+        id = in.readParcelable((ItemId.class.getClassLoader()));
         snippet = in.readParcelable(Snippet.class.getClassLoader());
     }
 
@@ -53,6 +54,7 @@ public class Video implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(id, flags);
         dest.writeParcelable(snippet, flags);
     }
 }

@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.0"
+    buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "com.github.florent37.myyoutube"
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -14,7 +14,7 @@ android {
     buildTypes {
         debug{
             buildConfigField "String", "YOUTUBE_API_URL", "\"https://www.googleapis.com/youtube/v3\""
-            buildConfigField "String", "YOUTUBE_KEY", "\"AIzaSyAMUWnp8lQBFRfLlfDJcSj3bkl6IPclkg4\""
+            buildConfigField "String", "YOUTUBE_KEY", "\"AIzaSyCSzF-T3HqI6nyasw4VuzpI8SDhg24xMsU\""
         }
 
         release.initWith(buildTypes.debug)
@@ -27,9 +27,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:cardview-v7:22.2.0'
-    compile 'com.android.support:recyclerview-v7:22.2.0'
+
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:cardview-v7:22.2.1'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
 
     //image url loading
     compile 'com.squareup.picasso:picasso:2.5.2'
@@ -37,7 +38,8 @@ dependencies {
     //rest webservices
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
-    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okio:okio:1.6.0'
 
     compile 'de.greenrobot:eventbus:2.4.0'
 

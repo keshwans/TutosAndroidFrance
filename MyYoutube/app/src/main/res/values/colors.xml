@@ -11,4 +11,9 @@
 
     <color name="background">#e5e5e5</color>
     <color name="textColor">#333</color>
+
+    <!-- hive youtube player -->
+    <color name="shadow">#555555</color>
+    <color name="title">#777777</color>
+
 </resources>

@@ -9,4 +9,9 @@
     <string name="auteur">Auteur</string>
     <string name="description">Description</string>
     <string name="detail">Detail</string>
+    <string name="ok">OK</string>
+    <string name="videoPlay">Video Player</string>
+
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+
 </resources>
